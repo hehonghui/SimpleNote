@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:gravity="center"
+              android:layout_height="match_parent"
+              android:padding="60dp"
+              android:orientation="vertical">
+
+    <EditText android:id="@+id/account_edit" style="@style/Widget.AppCompat.EditText"
+              android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:minHeight="40dp"/>
+    <EditText android:id="@+id/pwd_edit" style="@style/Widget.AppCompat.EditText"
+              android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:gravity="top|left" android:minHeight="40dp"/>
+    <Button android:id="@+id/login_btn" android:layout_width="160dp" android:layout_height="48dp"
+            android:layout_marginTop="36dp"
+            android:layout_gravity="center_horizontal" android:text="登录"/>
+</LinearLayout>

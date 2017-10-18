@@ -1,4 +1,4 @@
-package com.demo.simplenote;
+package com.demo.simplenote.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.demo.simplenote.ui.edit.NoteEditActivity;
+import com.demo.simplenote.R;
 import com.demo.simplenote.adapters.NoteAdapter;
 import com.demo.simplenote.domain.Note;
 
@@ -38,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         EventBus.getDefault().register(this);
+
+
+//        startActivity(new Intent(MainActivity.this, LoginActivity.class));
     }
 
     private List<Note> mockNotes() {

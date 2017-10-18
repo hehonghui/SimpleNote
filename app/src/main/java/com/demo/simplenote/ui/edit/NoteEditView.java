@@ -1,4 +1,4 @@
-package com.demo.simplenote;
+package com.demo.simplenote.ui.edit;
 
 /**
  * Created by mrsimple on 17/10/17.

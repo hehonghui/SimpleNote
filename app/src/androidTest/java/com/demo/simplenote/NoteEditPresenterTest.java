@@ -4,6 +4,8 @@ import android.support.test.runner.AndroidJUnit4;
 
 import com.demo.simplenote.api.NoteSyncAPi;
 import com.demo.simplenote.network.NetworkWatchDog;
+import com.demo.simplenote.ui.edit.NoteEditPresenter;
+import com.demo.simplenote.ui.edit.NoteEditView;
 
 import junit.framework.Assert;
 

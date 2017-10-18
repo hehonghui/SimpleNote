@@ -1,4 +1,4 @@
-package com.demo.simplenote;
+package com.demo.simplenote.ui.edit;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.demo.simplenote.R;
 import com.demo.simplenote.api.NoteSyncAPi;
 import com.demo.simplenote.domain.Note;
 import com.demo.simplenote.network.NetworkWatchDog;

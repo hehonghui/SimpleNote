@@ -1,4 +1,4 @@
-package com.demo.simplenote;
+package com.demo.simplenote.ui.edit;
 
 import com.demo.simplenote.api.NoteSyncAPi;
 import com.demo.simplenote.domain.Note;
