@@ -7,6 +7,9 @@ public class SingletonDCL {
 
     private static SingletonDCL mInstance = null ;
 
+    private SingletonDCL() {
+    }
+
     public static SingletonDCL getInstance() {
         if (mInstance == null) {
             synchronized (Singleton.class) {
