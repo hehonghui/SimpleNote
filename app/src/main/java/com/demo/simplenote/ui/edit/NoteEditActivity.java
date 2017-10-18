@@ -12,6 +12,8 @@ import com.demo.simplenote.api.NoteSyncAPi;
 import com.demo.simplenote.domain.Note;
 import com.demo.simplenote.network.NetworkWatchDog;
 
+import de.greenrobot.event.EventBus;
+
 /**
  * Created by mrsimple on 18/10/17.
  */
@@ -46,6 +48,7 @@ public class NoteEditActivity extends AppCompatActivity implements NoteEditView 
     @Override
     public void onSaved() {
         Toast.makeText(NoteEditActivity.this, "saved", Toast.LENGTH_SHORT).show();
+        EventBus.getDefault().post(mNote);
         finish();
     }
 

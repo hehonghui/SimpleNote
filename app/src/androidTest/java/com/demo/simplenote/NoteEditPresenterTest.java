@@ -17,6 +17,8 @@ import org.junit.runner.RunWith;
 import static org.mockito.Mockito.mock;
 
 /**
+ * 在 Android 测试环境下，被测试 、被引用的类 中可以带有 Android SDK 的类库.
+ *
  * Created by mrsimple on 18/10/17.
  */
 @RunWith(AndroidJUnit4.class)

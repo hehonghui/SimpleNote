@@ -4,8 +4,6 @@ import com.demo.simplenote.api.NoteSyncAPi;
 import com.demo.simplenote.domain.Note;
 import com.demo.simplenote.network.NetworkWatchDog;
 
-import de.greenrobot.event.EventBus;
-
 /**
  * Created by mrsimple on 18/10/17.
  */
@@ -15,6 +13,8 @@ public class NoteEditPresenter {
     NoteEditView mView ;
     NoteSyncAPi mApi ;
     NetworkWatchDog mWatchDog ;
+
+    // dagger 依赖注入
 
     public NoteEditPresenter(NoteEditView view, NoteSyncAPi api, NetworkWatchDog dog) {
         this.mView = view;
@@ -39,7 +39,6 @@ public class NoteEditPresenter {
                     if ( mView != null ) {
                         // update timestamp
                         note.modifyTimeStamp = System.currentTimeMillis();
-                        EventBus.getDefault().post(note);
                         mView.onSaved();
                     }
                 }
