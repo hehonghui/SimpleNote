@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.demo.simplenote.ui.edit.NoteEditActivity;
 import com.demo.simplenote.R;
 import com.demo.simplenote.adapters.NoteAdapter;
 import com.demo.simplenote.domain.Note;
+import com.demo.simplenote.ui.edit.NoteEditActivity;
 
 import java.util.Collections;
 import java.util.LinkedList;

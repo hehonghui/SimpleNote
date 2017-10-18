@@ -7,8 +7,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.demo.simplenote.R;
-import com.demo.simplenote.date.TimestampFormator;
-import com.demo.simplenote.domain.Note;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,11 +15,11 @@ import java.util.List;
 /**
  * Created by mrsimple on 17/10/17.
  */
-public class NoteAdapter extends BaseAdapter {
+public class AnotherAdapter extends BaseAdapter {
 
-    protected final List<Note> mDataSet = new ArrayList<>();
+    protected final List<String> mDataSet = new ArrayList<>();
 
-    public NoteAdapter(List<Note> dataSet) {
+    public AnotherAdapter(List<String> dataSet) {
         if (dataSet != null) {
             mDataSet.addAll(dataSet);
             // 排序
@@ -30,7 +28,7 @@ public class NoteAdapter extends BaseAdapter {
     }
 
 
-    public List<Note> getDataSet() {
+    public List<String> getDataSet() {
         return mDataSet;
     }
 
@@ -40,7 +38,7 @@ public class NoteAdapter extends BaseAdapter {
     }
 
     @Override
-    public Note getItem(int position) {
+    public String getItem(int position) {
         return mDataSet.get(position);
     }
 
@@ -51,17 +49,16 @@ public class NoteAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        NoteViewHolder holder = null;
+        StringViewHolder holder = null;
         if (convertView == null) {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.note_item, parent, false);
-            holder = new NoteViewHolder(convertView);
+            holder = new StringViewHolder(convertView);
             convertView.setTag(holder);
         } else {
-            holder = (NoteViewHolder) convertView.getTag();
+            holder = (StringViewHolder) convertView.getTag();
         }
-        final Note item = getItem(position) ;
-        holder.titleView.setText(item.title);
-        holder.timestampView.setText(TimestampFormator.format(item.modifyTimeStamp));
+        final String item = getItem(position) ;
+        holder.titleView.setText(item);
         return convertView;
     }
 
@@ -69,15 +66,13 @@ public class NoteAdapter extends BaseAdapter {
     /**
      *
      */
-    public static class NoteViewHolder {
+    public static class StringViewHolder {
         public View itemView;
         public TextView titleView;
-        public TextView timestampView;
 
-        public NoteViewHolder(View itemView) {
+        public StringViewHolder(View itemView) {
             this.itemView = itemView;
             titleView = (TextView) itemView.findViewById(R.id.note_title_tv);
-            timestampView = (TextView) itemView.findViewById(R.id.note_modify_tv);
         }
     }
 }

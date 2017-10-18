@@ -36,13 +36,15 @@ public abstract class CustomBaseAdapter<D, V extends CustomBaseAdapter.ViewHolde
         return position;
     }
 
+    public List<D> getDataSet() {
+        return mDataSet;
+    }
+
     @Override
     public final View getView(int position, View convertView, ViewGroup parent) {
         V holder;
         if (convertView == null) {
             holder = onCreateViewHolder(parent);
-            // set tag
-            convertView.setTag(holder);
         } else {
             holder = (V) convertView.getTag();
         }
@@ -51,7 +53,7 @@ public abstract class CustomBaseAdapter<D, V extends CustomBaseAdapter.ViewHolde
     }
 
     /**
-     * 创建
+     * 创建 ViewHolder
      * @param parent
      * @return
      */
@@ -77,6 +79,8 @@ public abstract class CustomBaseAdapter<D, V extends CustomBaseAdapter.ViewHolde
 
         public ViewHolder(View itemView) {
             this.itemView = itemView;
+            // set tag
+            this.itemView.setTag(this);
         }
     }
 }
