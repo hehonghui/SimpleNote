@@ -11,6 +11,7 @@ import com.demo.simplenote.date.TimestampFormator;
 import com.demo.simplenote.domain.Note;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -23,7 +24,14 @@ public class NoteAdapter extends BaseAdapter {
     public NoteAdapter(List<Note> dataSet) {
         if (dataSet != null) {
             mDataSet.addAll(dataSet);
+            // 排序
+            Collections.sort(mDataSet);
         }
+    }
+
+
+    public List<Note> getDataSet() {
+        return mDataSet;
     }
 
     @Override
