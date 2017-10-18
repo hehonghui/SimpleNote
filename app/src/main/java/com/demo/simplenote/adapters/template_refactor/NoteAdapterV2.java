@@ -4,6 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.demo.simplenote.R;
+import com.demo.simplenote.date.TimestampFormator;
 import com.demo.simplenote.domain.Note;
 
 import java.util.List;
@@ -17,10 +18,11 @@ public class NoteAdapterV2 extends CustomBaseAdapter<Note, NoteViewHolderV2> {
         super(dataSet);
     }
 
-
     @Override
-    protected void onBindViewHolder(NoteViewHolderV2 viewHolder, int position) {
-
+    protected void onBindViewHolder(NoteViewHolderV2 holder, int position) {
+        final Note item = getItem(position) ;
+        holder.titleView.setText(item.title);
+        holder.timestampView.setText(TimestampFormator.format(item.modifyTimeStamp));
     }
 
     protected NoteViewHolderV2 onCreateViewHolder(ViewGroup parent) {

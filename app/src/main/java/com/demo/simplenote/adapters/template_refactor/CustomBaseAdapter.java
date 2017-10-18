@@ -41,6 +41,8 @@ public abstract class CustomBaseAdapter<D, V extends CustomBaseAdapter.ViewHolde
         V holder;
         if (convertView == null) {
             holder = onCreateViewHolder(parent);
+            // set tag
+            convertView.setTag(holder);
         } else {
             holder = (V) convertView.getTag();
         }
@@ -75,8 +77,6 @@ public abstract class CustomBaseAdapter<D, V extends CustomBaseAdapter.ViewHolde
 
         public ViewHolder(View itemView) {
             this.itemView = itemView;
-            // set tag
-            this.itemView.setTag(this);
         }
     }
 }
