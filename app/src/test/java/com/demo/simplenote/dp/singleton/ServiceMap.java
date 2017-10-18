@@ -11,8 +11,8 @@ public class ServiceMap {
     private static final Map<String, Object> INSTANCE = new HashMap<>();
 
     public ServiceMap() {
-        INSTANCE.put("123", new Object()) ;
-        INSTANCE.put("456", 456) ;
+        INSTANCE.put("123", "123-obj") ;
+        INSTANCE.put("456", "456-obj") ;
     }
 
     public static Object getService(String name) {
