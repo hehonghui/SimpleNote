@@ -60,4 +60,21 @@ public class NoteEditPresenter {
     public void detach() {
         mView = null ;
     }
+
+//
+//    /**
+//     * 模拟发送网络请求  【 耦合在 Presenter 类中, Test 】
+//     * @param note
+//     * @param listener
+//     */
+//    private void saveNote(Note note, final NoteSyncAPi.SyncListener listener) {
+//        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                if ( listener != null ) {
+//                    listener.onSuccess();
+//                }
+//            }
+//        }, 1000);
+//    }
 }
