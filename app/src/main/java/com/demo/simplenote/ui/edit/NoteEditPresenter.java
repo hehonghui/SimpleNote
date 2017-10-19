@@ -33,6 +33,7 @@ public class NoteEditPresenter {
         if ( mApi != null && note != null && mWatchDog.isNetworkAvailable() ) {
             note.title = title ;
             note.content = content ;
+            // 发送网络请求
             mApi.saveNote(note, new NoteSyncAPi.SyncListener() {
                 @Override
                 public void onSuccess() {

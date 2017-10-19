@@ -1,17 +1,12 @@
 package com.demo.simplenote;
 
 import com.demo.simplenote.domain.Note;
-import com.demo.simplenote.network.NetworkWatchDog;
 
 import junit.framework.TestCase;
 
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-
-import static org.mockito.Matchers.anyInt;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 /**
  * Created by mrsimple on 18/10/17.
@@ -57,20 +52,5 @@ public class NoteListSortTest extends TestCase {
         assertEquals(mNotes.get(2).modifyTimeStamp, 2);
         assertEquals(mNotes.get(3).modifyTimeStamp, 1);
         assertEquals(mNotes.get(4).modifyTimeStamp, 0);
-    }
-
-
-    public void testMock() throws Exception {
-        NetworkWatchDog dog = mock(NetworkWatchDog.class);
-        when(dog.isNetworkAvailable()).thenReturn(false) ;
-        assertFalse(dog.isNetworkAvailable());
-
-        // mock list
-        List<String> strings = mock(List.class);
-        when(strings.get(anyInt())).thenReturn("123") ;
-
-        assertEquals(0, strings.size());
-        assertEquals("123", strings.get(5));
-        assertEquals("123", strings.get(12));
     }
 }
