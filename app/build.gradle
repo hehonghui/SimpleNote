@@ -17,6 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        prod { }
+
+        monkey {}
+    }
 }
 
 dependencies {
@@ -26,6 +32,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
 
+    // 集成 自定义的 LeakCanary, 在 monkey flavor 时才会引用该类.
+    monkeyCompile project(':leakfortest')
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

@@ -11,6 +11,7 @@ import com.demo.simplenote.R;
 import com.demo.simplenote.adapters.NoteAdapter;
 import com.demo.simplenote.domain.Note;
 import com.demo.simplenote.ui.edit.NoteEditActivity;
+import com.demo.simplenote.utils.TestReflect;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         });
         EventBus.getDefault().register(this);
 
-
+        TestReflect.setupLeakCanaryForTest(getApplication());
 //        startActivity(new Intent(MainActivity.this, LoginActivity.class));
     }
 
