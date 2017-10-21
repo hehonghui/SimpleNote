@@ -27,8 +27,13 @@ public final class LeakCanaryForTest {
         Log.e("", "### LeakCanaryForTest install invoked.") ;
         sAppPackageName = application.getPackageName();
         // 设置定制的 LeakDumpService , 将 leak 信息输出到指定的目录
-        sWatcher = LeakCanary.refWatcher(application).listenerServiceClass(LeakDumpService.class).excludedRefs(AndroidExcludedRefs.createAppDefaults().build())
-                .buildAndInstall();
+        sWatcher = LeakCanary
+                    .refWatcher(application)
+                    // 定制 LeakDumpService
+                    .listenerServiceClass(LeakDumpService.class)
+                    .excludedRefs(AndroidExcludedRefs.createAppDefaults().build())
+                    .buildAndInstall();
+
         // disable DisplayLeakActivity
         LeakCanaryInternals.setEnabled(application, DisplayLeakActivity.class, false);
     }
