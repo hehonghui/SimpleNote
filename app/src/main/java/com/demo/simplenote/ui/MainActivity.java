@@ -2,8 +2,6 @@ package com.demo.simplenote.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -80,23 +78,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
-    }
-
-
-    // 方式1
-    Handler mHandler1 = new Handler() ;
-    Handler mHandler2  ;
-
-    private void testHandlerCode() {
-
-        // 方式2
-        new Thread() {
-            @Override
-            public void run() {
-                mHandler2 = new Handler() ;
-                Message msg = new Message() ;
-                mHandler2.sendMessage(msg) ;
-            }
-        }.start();
     }
 }
